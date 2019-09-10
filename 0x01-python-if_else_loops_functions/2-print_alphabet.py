@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 letter = 97
-while letter <= ord('z'):
-    print(chr(letter), end="")
-    letter += 1
+for i in range(97, 123):
+    print(chr(i), end="")
