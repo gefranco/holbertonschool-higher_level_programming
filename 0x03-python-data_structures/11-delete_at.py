@@ -1,0 +1,3 @@
+def delete_at(my_list=[], idx=0):
+    my_list[idx:idx+1] = []
+    return my_list
