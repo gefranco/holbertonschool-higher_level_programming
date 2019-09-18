@@ -14,8 +14,9 @@ int is_palindrome(listint_t **head)
 	int count = 0;
 	int i;
 	int *array;
-	if(*head == NULL)
-		return(1);
+
+	if (*head == NULL)
+		return (1);
 
 	while (myhead)
 	{
@@ -23,15 +24,11 @@ int is_palindrome(listint_t **head)
 		count++;
 	}
 
-
 	count = count / 2;
-
 
 	myhead = *head;
 
-
 	array = malloc(sizeof(int) * count);
-
 
 	for (i = 0; i < count; i++)
 	{
@@ -41,8 +38,7 @@ int is_palindrome(listint_t **head)
 		myhead = myhead->next;
 	}
 	i--;
-	myhead = *head;
-	for (i = 0; i < count; i++)
+	for (; i >= 0 ; i--)
 	{
 		if (array[i] != myhead->n)
 			return (0);
