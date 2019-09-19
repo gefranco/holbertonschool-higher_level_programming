@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "lists.h"
-int getnum(listint_t *head, int i);
+
 /**
  * is_palindrome -  checks if a singly linked list is a palindrome
  * @head: pointer to head of list
@@ -13,6 +13,7 @@ int is_palindrome(listint_t **head)
 
 	int count = 0;
 	int i;
+	int *array;
 	int mod = 0;
 
 	if (*head == NULL)
@@ -28,8 +29,13 @@ int is_palindrome(listint_t **head)
 
 	myhead = *head;
 
+	array = malloc(sizeof(int) * count);
+
 	for (i = 0; i < count; i++)
 	{
+		array[i] = myhead->n;
+
+
 		myhead = myhead->next;
 	}
 	i--;
@@ -37,20 +43,10 @@ int is_palindrome(listint_t **head)
 		myhead = myhead->next;
 	for (; i >= 0 ; i--)
 	{
-		if (getnum(*head, i) != myhead->n)
+		if (array[i] != myhead->n)
 			return (0);
 		myhead = myhead->next;
 	}
+	free(array);
 	return (1);
-}
-
-
-int getnum(listint_t *head, int i)
-{
-	listint_t *hh = head;
-	int index = 0;
-
-	for (; index < i; index++)
-		hh = hh->next;
-	return (hh->n);
 }
