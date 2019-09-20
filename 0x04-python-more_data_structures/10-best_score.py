@@ -4,4 +4,4 @@ def best_score(a_dictionary):
         return None
     keys = list(a_dictionary.keys())
     keys.sort()
-    return keys.pop()
+    return keys[len(keys)-1]
