@@ -53,16 +53,17 @@ class Square:
             print()
 
     def __str__(self):
+        line = list()
         if self.size == 0:
-            print()
-            return
+            return line
+
         if self.position[1] == 1:
             for k in range(self.position[1]):
-                print()
+                line.append("\n")
         for i in range(self.size):
             for t in range(self.position[0]):
-                    print(" ", end="")
+                    line.append(" ")
             for j in range(self.size):
-                print("#", end="")
-            print()
-        return ""
+                line.append("#")
+            line.append("\n")
+        return "".join(line)
