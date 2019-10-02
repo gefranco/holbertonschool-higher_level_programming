@@ -44,8 +44,9 @@ class Square:
         i = 0
         j = 0
         t = 0
-        for k in range(self.position[1] - 1):
-            print()
+        if self.position[1] == 1:
+            for k in range(self.position[1]):
+                print()
         for i in range(self.size):
             for t in range(self.position[0]):
                     print(" ", end="")
