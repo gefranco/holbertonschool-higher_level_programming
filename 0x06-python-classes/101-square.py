@@ -55,7 +55,7 @@ class Square:
     def __str__(self):
         line = list()
         if self.size == 0:
-            return line
+            return "".join(line)
 
         if self.position[1] == 1:
             for k in range(self.position[1]):
