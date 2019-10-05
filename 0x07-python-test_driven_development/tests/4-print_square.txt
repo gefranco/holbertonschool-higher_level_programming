@@ -10,3 +10,6 @@
     >>> print_square(-1)
     Traceback (most recent call last):
     ValueError: size must be >= 0
+    >>> print_square() #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    TypeError: ...
