@@ -13,16 +13,14 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    text = text.replace(". ",".")
-    text = text.replace("? ","?")
-    text = text.replace(": ",":")
+    text = text.replace(". ", ".")
+    text = text.replace("? ", "?")
+    text = text.replace(": ", ":")
     for i in text:
         if i == '.':
             i = '.\n\n'
         elif i == '?':
             i = '?\n\n'
-        elif i ==':':
+        elif i == ':':
             i = ':\n\n'
-            
-             
         print(i, end="")
