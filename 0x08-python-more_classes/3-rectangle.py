@@ -40,7 +40,8 @@ class Rectangle:
 
     def __str__(self):
         rep = []
-
+        if self.__height == 0 or self.width == 0:
+            return ""
         for j in range(self.__height):
             for i in range(self.__width):
                 rep += "#"
