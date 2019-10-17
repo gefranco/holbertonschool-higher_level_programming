@@ -1,21 +1,20 @@
 #!/usr/bin/python3
 """
-"11-rectangle" module.
+"10-rectangle" module.
 
-The 11-rectangle supplies the class Rectangle
+The 10-rectangle supplies the class Rectangle
 """
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
     """
-    class Square, inherits from Rectangle
+    class Square, inherit from Rectangle
     """
 
     def __init__(self, size):
-            Rectangle.__init__(self, size, size)
-            self.__size = size
+        super().integer_validator("size", size)
+        super().__init__(size, size)
 
     def __str__(self):
-
-        return "[Square] " + str(self.__size) + "/" + str(self.__size)
+        return "[Square] " + str(self.__width) + "/" + str(self.__height)
