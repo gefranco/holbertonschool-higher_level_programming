@@ -13,4 +13,5 @@ class Square(Rectangle):
     """
 
     def __init__(self, size):
-            Rectangle.__init__(self, size, size)
+        super().integer_validator("size", size) 
+        super().__init__(size, size)
