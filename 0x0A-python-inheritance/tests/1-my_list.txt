@@ -22,3 +22,7 @@
     >>> my_list = MyList(["g", "kk", "jjj"])
     >>> my_list.print_sorted()
     ['g', 'jjj', 'kk']
+    >>> my_list.append()
+    Traceback (most recent call last):
+    TypeError: append() takes exactly one argument (0 given)
+
