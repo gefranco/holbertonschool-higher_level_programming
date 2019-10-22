@@ -6,7 +6,7 @@ module for the Base class
 '''
 
 import json
-from pathlib import Path
+import os
 
 
 class Base:
@@ -62,9 +62,7 @@ class Base:
     def load_from_file(cls):
         '''returns a list of instances from a file'''
 
-        fc = Path(cls.__name__+".json")
-
-        if not fc.is_file():
+        if not os.path.isfile(cls.__name__ + ".json"):
             return []
 
         with open(cls.__name__+".json", mode="r", encoding="utf-8") as f:
