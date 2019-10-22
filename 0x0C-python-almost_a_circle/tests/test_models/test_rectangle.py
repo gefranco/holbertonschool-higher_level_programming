@@ -235,8 +235,6 @@ class TestRectangle(unittest.TestCase):
             r1.update(height = [3])
         with self.assertRaises(TypeError):
             r1.update(height = True)
-        with self.assertRaises(TypeError):
-            r1.update(height = None)
 
 
 
