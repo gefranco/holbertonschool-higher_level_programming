@@ -11,9 +11,10 @@ from pathlib import Path
 
 
 class Base:
-    """
-    class Base. main class, assign an id to every object created
-    
+    """class Base. main class, assign an id to every object created
+
+    Attributes:
+        __nb_objects    the number of objects created
 
     """
     __nb_objects = 0
