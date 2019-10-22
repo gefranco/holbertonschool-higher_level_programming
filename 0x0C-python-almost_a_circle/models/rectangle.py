@@ -5,7 +5,7 @@
 The rectangle module supplies the Rectangle class
 """
 
-from models.base  import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -94,8 +94,8 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[Rectangle] (" + str(self.id) + ") " \
-    + str(self.__x) + "/" + str(self.__y) \
-    + " - " + str(self.__width) + "/" + str(self.__height)
+                + str(self.__x) + "/" + str(self.__y) \
+                + " - " + str(self.__width) + "/" + str(self.__height)
 
     def update(self, *args, **kwargs):
         '''update the rectangle'''
