@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-******************
-class Base module
-*****************
+=============
+module base 
+============
 """
 
 import json
@@ -20,7 +20,7 @@ class Base:
 
     def __init__(self, id=None):
         """
-        constructor method
+        __init__ method
         """
         if id is not None:
             self.id = id
