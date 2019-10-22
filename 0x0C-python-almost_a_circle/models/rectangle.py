@@ -5,7 +5,7 @@
 The rectangle module supplies the Rectangle class
 """
 
-from models.base import Base
+from models.base  import Base
 
 
 class Rectangle(Base):
@@ -69,8 +69,8 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    '''y setter'''
     def y(self, y):
+        '''y setter'''
         if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -93,8 +93,8 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        return "[Rectangle] (" + str(self.id) + ") "
-    + str(self.__x) + "/" + str(self.__y)
+        return "[Rectangle] (" + str(self.id) + ") " \
+    + str(self.__x) + "/" + str(self.__y) \
     + " - " + str(self.__width) + "/" + str(self.__height)
 
     def update(self, *args, **kwargs):
