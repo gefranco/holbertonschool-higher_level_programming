@@ -16,12 +16,14 @@ class Base:
         __nb_objects    the number of objects created
 
     """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
         """
         init method
         """
+
         if id is not None:
             self.id = id
         else:
@@ -33,6 +35,7 @@ class Base:
         """
         returns the JSON string representation of list_dictionaries
         """
+
         strjson = json.dumps(list_dictionaries)
         return strjson
 
@@ -41,6 +44,7 @@ class Base:
         """
         writes the JSON string representation of list_objs to a file
         """
+
         dictionary_list = []
         for li in list_objs:
             dictionary_list.append(li.to_dictionary())
@@ -56,6 +60,7 @@ class Base:
         """
         returns the list of the JSON string representation json_string
         """
+
         return json.loads(json_string)
 
     @classmethod
@@ -63,6 +68,7 @@ class Base:
         """
         returns an instance with all attributes already set
         """
+
         r1 = cls(10, 10)
         r1.update(**dictionary)
         return r1
@@ -72,6 +78,7 @@ class Base:
         """
         returns a list of instances from a file
         """
+
         fc = Path(cls.__name__+".json")
 
         if not fc.is_file():
