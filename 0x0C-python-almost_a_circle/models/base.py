@@ -33,7 +33,7 @@ class Base:
         """
         strjson = json.dumps(list_dictionaries)
         return strjson
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -42,14 +42,13 @@ class Base:
         dictionary_list = []
         for li in list_objs:
             dictionary_list.append(li.to_dictionary())
-            
 
         strjson = Base.to_json_string(dictionary_list)
-    
+
         with open(cls.__name__+".json", mode="w", encoding="utf-8") as file:
 
             file.write(strjson)
-   
+
     @staticmethod
     def from_json_string(json_string):
         """
@@ -62,10 +61,10 @@ class Base:
         """
         returns an instance with all attributes already set
         """
-        r1 = cls(10,10)
+        r1 = cls(10, 10)
         r1.update(**dictionary)
         return r1
-    
+
     @classmethod
     def load_from_file(cls):
         """
@@ -76,12 +75,11 @@ class Base:
         if not fc.is_file():
             return []
 
-
-        with open(cls.__name__+".json",mode="r", encoding="utf-8") as f:
+        with open(cls.__name__+".json", mode="r", encoding="utf-8") as f:
             strjson = f.read()
-        
+
         list_dictionaries = Base.from_json_string(strjson)
-    
+
         list_obj = []
         for i in list_dictionaries:
             list_obj.append(cls.create(**i))
