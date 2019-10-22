@@ -20,7 +20,7 @@ class Base:
 
     def __init__(self, id=None):
         """
-        __init__ method
+        init method
         """
         if id is not None:
             self.id = id
