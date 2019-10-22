@@ -9,6 +9,7 @@ import json
 
 from pathlib import Path
 
+
 class Base:
     """
     class Base. main class, assign an id to every object created
@@ -24,11 +25,17 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        returns the JSON string representation of list_dictionaries
+        """
         strjson = json.dumps(list_dictionaries)
         return strjson
     
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        writes the JSON string representation of list_objs to a file
+        """
         dictionary_list = []
         for li in list_objs:
             dictionary_list.append(li.to_dictionary())
@@ -42,17 +49,25 @@ class Base:
    
     @staticmethod
     def from_json_string(json_string):
+        """
+        returns the list of the JSON string representation json_string
+        """
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        returns an instance with all attributes already set
+        """
         r1 = cls(10,10)
         r1.update(**dictionary)
         return r1
     
     @classmethod
     def load_from_file(cls):
-
+        """
+        returns a list of instances from a file
+        """
         fc = Path(cls.__name__+".json")
 
         if not fc.is_file():
