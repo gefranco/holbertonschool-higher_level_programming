@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """
-"models" module.
-
-The model module supplies the model classes
+******************
+class Base module
+*****************
 """
 
 import json
-
 from pathlib import Path
 
 
