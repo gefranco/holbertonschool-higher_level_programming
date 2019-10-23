@@ -59,7 +59,10 @@ class Base:
         '''returns an instance with all attributes already set'''
         if dictionary is None:
             return None
-        r1 = cls(10, 10)
+        if cls.__name__ is "Rectangle":
+            r1 = cls(10, 10)
+        else:
+            r1 = cls(10)
         r1.update(**dictionary)
         return r1
 
