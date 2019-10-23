@@ -80,3 +80,47 @@ class Base:
             list_obj.append(cls.create(**i))
 
         return list_obj
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+
+        with open(cls.__name__+".csv", mode="w", encoding="utf-8")as f:
+            for i in list_objs:
+                row = ""
+                dic = i.to_dictionary()
+                if cls.__name__ is "Rectangle":
+                    row = str(dic["id"])
+                    row += ","+str(dic["width"])
+                    row += ","+str(dic["height"])
+                    row += ","+str(dic["x"])
+                    row += ","+str(dic["y"])+"\n"
+                else:
+                    row = str(dic["id"])
+                    row += ","+str(dic["size"])
+                    row += ","+str(dic["x"])
+                    row += ","+str(dic["y"])+"\n"
+                f.write(row)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        list_obj = []
+        with open(cls.__name__+".csv", mode="r", encoding="utf-8")as f:
+            rows = f.readlines()
+
+        for row in rows:
+            columns = row.split(",")
+            dict_o = {}
+            if cls.__name__ is "Rectangle":
+                dict_o["id"] = int(columns[0])
+                dict_o["width"] = int(columns[1])
+                dict_o["height"] = int(columns[2])
+                dict_o["x"] = int(columns[3])
+                dict_o["y"] = int(columns[4])
+            else:
+                dict_o["id"] = int(columns[0])
+                dict_o["size"] = int(columns[1])
+                dict_o["x"] = int(columns[2])
+                dict_o["y"] = int(columns[3])
+
+            list_obj.append(cls.create(**dict_o))
+        return list_obj
