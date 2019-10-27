@@ -7,6 +7,7 @@ module for the Base class
 
 import json
 import os
+import turtle
 
 
 class Base:
@@ -127,3 +128,36 @@ class Base:
 
             list_obj.append(cls.create(**dict_o))
         return list_obj
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        my_window = turtle.Screen()
+        my_pen = turtle.Turtle()
+        turtle.showturtle()
+        for r in list_rectangles:
+            my_pen.setx(r.x)
+            my_pen.sety(r.y)
+            my_pen.pendown()
+            my_pen.forward(r.width)
+            my_pen.right(90)
+            my_pen.forward(r.height)
+            my_pen.right(90)
+            my_pen.forward(r.width)
+            my_pen.right(90)
+            my_pen.forward(r.height)
+            my_pen.penup()
+
+        for s in list_squares:
+            my_pen.setx(s.x)
+            my_pen.sety(s.y)
+            my_pen.pendown()
+            my_pen.forward(s.width)
+            my_pen.right(90)
+            my_pen.forward(s.height)
+            my_pen.right(90)
+            my_pen.forward(s.width)
+            my_pen.right(90)
+            my_pen.forward(s.height)
+            my_pen.penup()
+
+        my_window.bgcolor("orange")
