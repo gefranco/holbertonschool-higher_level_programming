@@ -15,5 +15,5 @@ if __name__ == "__main__":
 
     session = Session()
 
-    d = State.__table__.delete().where(State.name.like('%ES%'))
+    d = State.__table__.delete().where(State.name.like('%a%'))
     engine.execute(d)
