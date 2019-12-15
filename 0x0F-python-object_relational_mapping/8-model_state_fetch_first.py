@@ -6,6 +6,7 @@ import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm.exc import NoResultFound
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -16,6 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
 
     session = Session()
-
     instance = session.query(State).first()
-    print("{}: {}".format(instance.id, instance.name))
+    if instance is not None:
+        print("{}: {}".format(instance.id, instance.name))
+    else:
+        print("Nothing")
