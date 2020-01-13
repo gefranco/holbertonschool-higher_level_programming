@@ -20,4 +20,4 @@ if __name__ == "__main__":
         else:
             print('No result')
     except Exception as e:
-        pass
+        print('No result')
