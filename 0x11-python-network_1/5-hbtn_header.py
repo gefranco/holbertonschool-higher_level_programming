@@ -8,5 +8,8 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    request = requests.get(sys.argv[1])
-    print(request.headers['X-Request-Id'])
+    try:
+        request = requests.get(sys.argv[1])
+        print(request.headers['X-Request-Id'])
+    except:
+        pass
