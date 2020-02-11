@@ -3,7 +3,13 @@
 const request = require('request');
 let requestDict = {};
 let countCharacter = 0;
-request(process.argv[2], function (error, response, body) {
+
+let url = null;
+if (process.argv[2]) {
+  url = process.argv[2];
+}
+
+request(url, function (error, response, body) {
   if (!error) {
     requestDict = JSON.parse(response.body);
     const results = requestDict.results;
