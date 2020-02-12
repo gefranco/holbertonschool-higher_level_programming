@@ -19,5 +19,7 @@ request(url, function (error, response, body) {
       }
     }
     console.log(countCharacter);
+  } else {
+    console.log(error);
   }
 });
