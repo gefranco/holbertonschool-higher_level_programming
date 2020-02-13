@@ -14,12 +14,12 @@ request(url, function (error, response, body) {
     requestDict = JSON.parse(response.body);
     const results = requestDict.results;
     for (let i = 0; i < results.length; i++) {
-      if (results[i].characters.includes('https://swapi.co/api/people/18/')) {
-        countCharacter++;
+      for (let j = 0; j < results[i].characters.length; j++) {
+        if (results[i].characters[j].includes('people/18/')) {
+          countCharacter++;
+        }
       }
     }
     console.log(countCharacter);
-  } else {
-    console.log(error);
   }
 });
