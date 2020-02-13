@@ -9,7 +9,7 @@ request(process.argv[2], function (error, response, body) {
     for (let i = 0; i < requestDict.length; i++) {
       if (requestDict[i].completed) {
         if (!tasks[requestDict[i].userId]) {
-          tasks[requestDict[i].userId] = 1;
+          tasks[requestDict[i].userId] = 0;
         }
         tasks[requestDict[i].userId] += 1;
       }
