@@ -4,8 +4,9 @@ $.ajax({
   success: function(json) {
     console.log(json);
     results = json.results;
-    $.each(results, function(i, title) {
-      console.log(title);
+    $.each(results, function(i, movie) {
+      console.log(movie.title);
+      $("#list_movies").append(movie.title);
     });
   }
 });
