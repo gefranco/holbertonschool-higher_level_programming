@@ -4,5 +4,6 @@ $.ajax({
   success: function(json) {
     console.log(json);
     console.log(json.name);
+    $("#character").text(json.name);
   }
 });
